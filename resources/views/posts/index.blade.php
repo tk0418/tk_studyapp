@@ -33,7 +33,7 @@
                 ">
                   My Posts  
                 </h1>
-                      
+                <a href='/posts/create'>投稿を作成する</a>
                 <div class='posts'>
                     @foreach ($posts as $post)
                         <div class='post'>
