@@ -45,11 +45,31 @@
         <h1 class="title">
             {{ $post->title }}
         </h1>
+        <div class='subtitle'>
+            <h3>単元</h3>
+            {{ $post->unit }}
+            <h3>学習目的</h3>
+            {{ $post->purpose }}
+        </div>
+        <div class='point'>
+            <h2 style='color:blue'>Point!</h2>
+            {{ $post->point }}
+        </div>
         <div class="content">
             <div class="content__post">
                 <h3>本文</h3>
                 <p>{{ $post->body }}</p>    
             </div>
+        </div>
+        <div class='sub1'>
+            <h3>参考文献</h3>
+            {{ $post->reference }}
+            <h3>メモ</h3>
+            {{ $post->memo }}
+        </div>
+        <div class='sub2'>
+            {{ $post->created_at }} <br>
+            {{ $post->updated_at }}
         </div>
         <div class="footer">
             <a href="/">戻る</a>
