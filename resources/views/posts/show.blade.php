@@ -71,8 +71,11 @@
             {{ $post->created_at }} <br>
             {{ $post->updated_at }}
         </div>
+        <div class="edit">
+            <a href="/posts/{{ $post->id }}/edit">ノートを編集する</a>
+        </div>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/">ホームへ戻る</a>
         </div>
     </body>
 </html>
