@@ -44,4 +44,10 @@ class PostController extends Controller
     
         return redirect('/posts/' . $post->id);
     }
+    
+    public function test_show(Post $post)
+    {
+        return view('posts.test_show')->with(['post' => $post]);
+     //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
+    }
 }

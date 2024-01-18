@@ -45,6 +45,9 @@
         <h1 class="title">
             {{ $post->title }}
         </h1>
+        <div class="test">
+            <button onclick="location.href='/posts/{{ $post->id }}/test'">チェックテスト</button>
+        </div>
         <div class='subtitle'>
             <h3>単元</h3>
             {{ $post->unit }}
