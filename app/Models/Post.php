@@ -11,6 +11,11 @@ class Post extends Model
     
     protected $fillable = [
         'title',
+        'unit',
+        'purpose',
+        'point',
         'body',
+        'reference',
+        'memo'
     ];
 }
