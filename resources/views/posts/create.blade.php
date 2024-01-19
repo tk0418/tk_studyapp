@@ -32,7 +32,7 @@
                 <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
             </div>
             <div class="image">
-                <input type="file" name="image">
+                <input type="file" name="image"> 
             </div>
             <div class='sub1'>
                 <h2>参考文献</h2>
