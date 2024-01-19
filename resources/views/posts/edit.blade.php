@@ -31,6 +31,9 @@
                     <h2>本文</h2>
                     <textarea name=post[body]>{{ $post->body }}</textarea>
                 </div>
+                <div class="image">
+                    <input type="file" name="image" value="{{ $post->image_url }}">
+                </div>
                 <div class='content_sub1'>
                     <h2>参考文献</h2>
                     <input type="text" name=post[reference] value="{{ $post->reference }}">
