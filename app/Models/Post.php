@@ -15,6 +15,7 @@ class Post extends Model
         'purpose',
         'point',
         'body',
+        'image_url',
         'reference',
         'memo',
     ];
