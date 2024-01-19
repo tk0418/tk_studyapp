@@ -6,7 +6,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <style>
-            .body{
+            .title {
                 padding: 0.5em 1em;
                 margin: 2em 0;
                 color: #474747;
@@ -14,7 +14,7 @@
                 border-left: double 7px #4ec4d3;/*左線*/
                 border-right: double 7px #4ec4d3;/*右線*/
             }
-            .body p {
+            .title p {
                 margin: 0; 
                 padding: 0;
             }
@@ -37,9 +37,9 @@
                 <div class='posts'>
                     @foreach ($posts as $post)
                         <div class='post'>
-                            <h2 class='title'>
+                            <h1 class='title'>
                                 <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
-                            </h2>
+                            </h1>
                             <p class='body'>{{$post->body}}</p>
                         </div>
                     @endforeach

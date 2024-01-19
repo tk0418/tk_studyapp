@@ -23,10 +23,13 @@ Route::post('/posts', [PostController::class, 'store']);
 
 Route::get('/posts/create', [PostController::class, 'create']);
 
+Route::get('/posts/test', [PostController::class ,'test_index']);
+Route::get('/posts/test', [PostController::class ,'test_index'])->name('checktest');
+
 Route::get('/posts/{post}', [PostController::class ,'show']);
 
 Route::get('/posts/{post}/test', [PostController::class ,'test_show']);
-// チェックテストページへ移行
+// チェックテスト詳細ページへ移行
 
 Route::get('/', [PostController::class, 'index']);
 

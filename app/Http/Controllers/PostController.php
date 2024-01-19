@@ -15,6 +15,12 @@ class PostController extends Controller
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
     }
     
+    public function test_index(Post $post)
+    {
+        return view('posts.test_index')->with(['posts' => $post->get()]);  
+       
+    }
+    
     public function show(Post $post)
     {
         return view('posts.show')->with(['post' => $post]);
