@@ -16,6 +16,6 @@ class Post extends Model
         'point',
         'body',
         'reference',
-        'memo'
+        'memo',
     ];
 }
