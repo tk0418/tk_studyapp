@@ -18,5 +18,7 @@ class Post extends Model
         'image_url',
         'reference',
         'memo',
+        'test',
+        'solution',
     ];
 }

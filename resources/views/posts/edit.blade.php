@@ -40,6 +40,13 @@
                     <h2>メモ</h2>
                     <textarea name=post[memo]>{{ $post->memo }}</textarea>
                 </div>
+                <div class="checktest">
+                    <h2>チェックテスト</h2>
+                    <h3>問題</h3>
+                    <textarea name=post[test] placeholder="問題">{{ $post->test }}</textarea>
+                    <h3>解答</h3>
+                    <textarea name=post[solution] placeholder="解答">{{ $post->solution }}</textarea>
+                </div>
                 <input type="submit" value="更新">
             </form>
             <div class="footer">
