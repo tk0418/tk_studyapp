@@ -30,6 +30,8 @@ Route::get('/posts/{post}', [PostController::class ,'show']);
 
 Route::get('/posts/{post}/test', [PostController::class ,'test_show']);
 // チェックテスト詳細ページへ移行
+Route::get('/posts/{post}/test/create', [PostController::class ,'test_create']);
+//チェックテスト作成
 
 Route::get('/', [PostController::class, 'index']);
 

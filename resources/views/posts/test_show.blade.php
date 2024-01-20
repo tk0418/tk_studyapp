@@ -75,11 +75,11 @@
                 }
                 </style>
                 <div class="D">解答</div>
-                <div class="E">{{ $post->unit }}</div>
+                <div class="E">{{ $post->solution }}</div>
             </div>
         </div>
-        <div class="edit">
-            <a href="/posts/{{ $post->id }}/edit">ノートを編集する</a>
+        <div class="create">
+            <a href="/posts/{post}/test/create">チェックテストを作成する</a>
         </div>
         <div class="footer">
             <a href="/posts/{{ $post->id }}">ノートへ戻る</a>

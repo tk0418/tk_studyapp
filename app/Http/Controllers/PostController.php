@@ -61,4 +61,9 @@ class PostController extends Controller
         return view('posts.test_show')->with(['post' => $post]);
      //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
     }
+    
+    public function test_create()
+    {
+        return view('posts.test_create');
+    }
 }

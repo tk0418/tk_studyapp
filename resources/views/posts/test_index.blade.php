@@ -35,13 +35,13 @@
                             });
                             </script>
                             <style>
-                            .D{
+                            .D {
                                 display: inline-block;
                                 background: #b6beff;
                                 padding: 5px 10px;
                                 cursor: pointer;
                             }
-                            .E{
+                            .E {
                                 background: #ffaf74;
                                 height: 100px;
                                 display:none
