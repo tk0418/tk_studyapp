@@ -40,10 +40,25 @@
                             <h1 class='title'>
                                 <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                             </h1>
-                            <p class='body'>{{$post->body}}</p>
+                            <p class='point'>{{$post->point}}</p>
+                            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" onclick="deletePost({{ $post->id }})">ノートを削除</button> 
+                            </form>
                         </div>
                     @endforeach
                 </div>
+                <script>
+                    function deletePost(id) {
+                        'use strict'
+                
+                        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+                            document.getElementById(`form_${id}`).submit();
+                        }
+                    }
+                </script>
+                <p>ログインユーザー：{{ Auth::user()->name }}</p>
             </body>
     </x-app-layout>
 </html>
