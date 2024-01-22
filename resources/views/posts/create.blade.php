@@ -16,6 +16,14 @@
                 <input type="text" name=post[title] placeholder="タイトル" value="{{ old('post.title') }}">
                 <p class="title_error" style="color:red">{{ $errors->first('post.title') }}</p>
             </div>
+            <div class="category">
+                <h2>Category</h2>
+                <select name="post[category_id]">
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class='subtitle'>
                 <h2>単元</h2>
                 <input type="text" name=post[unit] placeholder="単元" value="{{ old('post.unit') }}">

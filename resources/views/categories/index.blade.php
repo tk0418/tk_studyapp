@@ -31,16 +31,14 @@
                     border: dashed 2px white;
                     padding: 0.2em 0.5em;
                 ">
-                  My Posts  
+                  カテゴリー：
                 </h1>
-                <a href='/posts/create'>投稿を作成する</a>
                 <div class='posts'>
                     @foreach ($posts as $post)
                         <div class='post'>
                             <h1 class='title'>
                                 <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                             </h1>
-                            <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                             <p class='point'>{{$post->point}}</p>
                             <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                                 @csrf

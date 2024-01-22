@@ -49,6 +49,7 @@
             <button onclick="location.href='/posts/{{ $post->id }}/test'">チェックテスト</button>
         </div>
         <div class='subtitle'>
+            <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
             <h3>単元</h3>
             {{ $post->unit }}
             <h3>学習目的</h3>
