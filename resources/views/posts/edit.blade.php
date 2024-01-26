@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1 class='title'>ノート編集画面</h1>
+        <h1 class='title'>ノート編集画面!</h1>
         <div class='content'>
             <form action='/posts/{{ $post->id }}' method='POST'>
                 @csrf
@@ -16,6 +16,14 @@
                 <div class="content_title">
                     <h2>タイトル</h2>
                     <input type="text" name=post[title] value="{{ $post->title }}">
+                </div>
+                <div class="category">
+                    <h2>Category</h2>
+                    <select name="post[category_id]">
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class='content_subtitle'>
                     <h2>単元</h2>
