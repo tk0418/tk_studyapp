@@ -38,7 +38,9 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
     //チェックテスト詳細ページへ移行
 });
 
+Route::get('/categories/create', [CategoryController::class, 'create']);
 Route::get('/categories/{category}', [CategoryController::class,'index']);
+Route::post('/categories', [CategoryController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

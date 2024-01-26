@@ -59,6 +59,9 @@
                         </div>
                     @endforeach
                 </div>
+                <div class='categories'>
+                    <a href='/categories/create'>カテゴリーを追加する</a>
+                </div>
                 <div class='paginate'>
                     {{ $posts->links() }}
                 </div>
