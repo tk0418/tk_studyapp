@@ -11,22 +11,68 @@
               position: relative;
               background: #f1f8ff;
               padding: 0.25em 0.5em;
-              border-left: solid 2em #5c9ee7;
+              border-left: solid 0.5em #5c9ee7;
             }
             
-            h1:before {
-              font-family: "FontAwesome";
-              content: "\f040";
+            h1:first-letter {
+                font-size:42px;
+                color:black;
+            }
+            .purpose {
+              position: relative;
+              line-height: 0.08;
+              padding:0.25em 1em;
+              display: inline-block;
+              top:0;
+            }
+            
+            .purpose:before, .purpose:after { 
               position: absolute;
-              padding: 0em;
-              color: white;
-              font-weight: 900;
-              left: -1.35em;
-              top: 50%;
-              -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
+              top: 0;
+              content:'';
+              width: 8px;
+              height: 80%;
+              display: inline-block;
             }
-            
+            .purpose:before {
+              border-left: solid 2.5px black;
+              border-top: solid 2.5px black;
+              border-bottom: solid 2.5px black;
+              left: 0;
+            }
+            .purpose:after {
+              content: '';
+              border-top: solid 2.5px black;
+              border-right: solid 2.5px black;
+              border-bottom: solid 2.5px black;
+              right: 0;
+            }
+            .point {
+                position: relative;
+                margin: 2em 2em;
+                padding: 25px 10px 7px;
+                border: solid 2px royalblue;
+                background: azure;
+            }
+            .point .point_title {
+                position: absolute;
+                display: inline-block;
+                top: -2px;
+                left: -2px;
+                padding: 0 9px;
+                height: 25px;
+                line-height: 25px;
+                font-size: 18px;
+                background: royalblue;
+                color: white;
+                font-weight: bold;
+            }
+            .point p {
+                font-family: serif;
+                font-weight: bold;
+                margin: 0; 
+                padding: 1.5em 1.5em;
+            }
             .content {
                 padding: 0.5em 1em;
                 margin: 2em 0;
@@ -46,22 +92,29 @@
             {{ $post->title }}
         </h1>
         <div class="test">
-            <button onclick="location.href='/posts/{{ $post->id }}/test'">チェックテスト</button>
+            <button onclick="location.href='/posts/{{ $post->id }}/test'">チェックテスト</button><br>
         </div>
         <div class='subtitle'>
-            <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
-            <h3>単元</h3>
-            {{ $post->unit }}
-            <h3>学習目的</h3>
-            {{ $post->purpose }}
+            <div style="
+            padding: 0em 0.5em;
+            text-decoration:underline;
+            line-hight:5">
+                <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+            </div>
+            @if ($post->purpose)
+            <div class='purpose'>
+                <h3>学習目的: {{ $post->purpose }}</h3>
+            </div>
+            @endif
         </div>
-        <div class='point'>
-            <h2 style='color:blue'>Point!</h2>
-            {{ $post->point }}
-        </div>
+        @if($post->point)
+            <div class='point'>
+                <span class='point_title'>Point！</span>
+                    <p>{{$post->point}}</p>
+            </div>
+        @endif
         <div class="content">
             <div class="content__post">
-                <h3>本文</h3>
                 <p>{{ $post->body }}</p>    
             </div>
             @if($post->image_url)
@@ -71,10 +124,13 @@
             @endif
         </div>
         <div class='sub1'>
-            <h3>参考文献</h3>
-            {{ $post->reference }}
-            <h3>メモ</h3>
-            {{ $post->memo }}
+            @if ($post->reference)
+                <h3>参考文献: {{ $post->reference }}</h3>
+            @endif
+            @if ($post->memo)
+                <h3>メモ</h3>
+                <p style='background:whitesmoke'>{{ $post->memo }}</p>
+            @endif
         </div>
         <div class='sub2'>
             {{ $post->created_at }} <br>
