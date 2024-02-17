@@ -77,4 +77,9 @@ class PostController extends Controller
     {
         return $this->belongsTo(Category::class);
     }
+    
+    public function tuto_index(Post $post)
+    {
+        return view('posts.t_index')->with(['post' => $post]);
+    }
 }

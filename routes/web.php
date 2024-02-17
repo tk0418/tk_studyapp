@@ -36,6 +36,8 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
     Route::get('/posts/{post}/edit', 'edit')->name('edit');
     Route::get('/posts/{post}/test', 'test_show')->name('test_show');
     //チェックテスト詳細ページへ移行
+    Route::get('/tutorial/index', 'tuto_index')->name('tuto_index');
+    //一覧画面の説明ページへ移行
 });
 
 Route::get('/categories/create', [CategoryController::class, 'create']);

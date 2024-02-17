@@ -87,6 +87,7 @@
                     letter-spacing: 5px">
                     すべてのノート</h1>
                 </div>
+                <a href='/tutorial/index'>説明</a>
                 <div class='posts'>
                     @foreach ($posts as $post)
                         <div class='post'>
