@@ -87,7 +87,10 @@
                     letter-spacing: 5px">
                     すべてのノート</h1>
                 </div>
-                <a href='/tutorial/index'>説明</a>
+                <p style="text-align: right;
+                letter-spacing: 2px;
+                font-weight: bold;
+                text-decoration: underline"><a href='/tutorial/index'>アプリの使い方はこちら</a></p>
                 <div class='posts'>
                     @foreach ($posts as $post)
                         <div class='post'>
